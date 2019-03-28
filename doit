@@ -1,0 +1,11 @@
+# command to create a file called timestamp with this time.
+timestamp <- 
+  : date '+%Y-%m-%d %H:%M:%S' > timestamp
+
+# count the lines of code we have written
+counts <- src/main/java/doit/Main.java 
+  : wc -l src/main/java/doit/*.java > counts
+
+run_test <- test.c
+  : gcc -o run_test test.c && ./run_test a b c
+
